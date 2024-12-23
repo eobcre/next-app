@@ -7,11 +7,11 @@ const NavBar = async () => {
   const session = await auth();
 
   return (
-    <div className='px-5 py-3'>
+    <div className='bg-dark'>
       <header>
-        <nav className='flex justify-between items-center'>
+        <nav className='flex justify-between items-center pr-6'>
           <Link href='/'>
-            <Image src='/logo.svg' alt='logo' width={50} height={50}></Image>
+            <Image src='/logo.png' alt='logo' width={80} height={80}></Image>
           </Link>
 
           <div className='flex gap-7'>
