@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Blop',
-  description: 'Blog App',
+  title: 'Sip',
+  description: 'Sip Blog',
 };
 
 export default function RootLayout({
