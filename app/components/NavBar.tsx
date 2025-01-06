@@ -9,13 +9,14 @@ const NavBar = async () => {
   return (
     <div className='bg-dark'>
       <header>
-        <nav className='flex justify-between items-center pr-6'>
+        <nav className='flex justify-between items-center pr-6 h-20'>
           <Link href='/'>
-            <Image src='/logo.png' alt='logo' width={80} height={80}></Image>
+            <Image src='/logo.png' alt='logo' width={70} height={70}></Image>
           </Link>
 
-          <div className='flex gap-7'>
+          <div className='flex gap-8 text-white'>
             {session && session?.user ? (
+              // logged in
               <>
                 <Link href='/'>
                   <span>Create</span>
@@ -24,7 +25,6 @@ const NavBar = async () => {
                 <form
                   action={async () => {
                     'use server';
-
                     await signOut({ redirectTo: '/' });
                   }}
                 >
@@ -36,14 +36,16 @@ const NavBar = async () => {
                 </Link>
               </>
             ) : (
+              // not logged in
               <form
                 action={async () => {
                   'use server';
-
                   await signIn('github');
                 }}
               >
-                <button type='submit'>Login</button>
+                <button type='submit' className='text-white'>
+                  Login
+                </button>
               </form>
             )}
           </div>
