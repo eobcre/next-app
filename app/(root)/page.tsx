@@ -1,10 +1,13 @@
 import React from 'react';
+import SearchForm from '../components/SearchForm';
 
-const Home = () => {
+const Home = async ({ searchParams }: { searchParams: Promise<{ q?: string }> }) => {
+  const query = (await searchParams).q;
+
   return (
-    <>
-      <h1 className='text-2xl p-4'>Home</h1>
-    </>
+    <div>
+      <SearchForm query={query} />
+    </div>
   );
 };
 
