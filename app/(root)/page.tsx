@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchForm from '../components/SearchForm';
 
-const Home = async ({ searchParams }: { searchParams: Promise<{ q?: string }> }) => {
+const Home = async ({ searchParams }: { searchParams: { q?: string } }) => {
   const query = (await searchParams).q;
 
   return (
